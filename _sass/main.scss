@@ -118,22 +118,24 @@ a{
   transition: all 0.2s ease;
    &:hover{
       //filter: drop-shadow(2px 2px 5px white);
+	   transition: all 0.3s ease;
+     text-shadow: 0px 1px 10px (rgba(201, 76, 76, 0.3));
     }
-	p{
+	//p{
   //position: relative;
   
   //top: -3px;
-  color: transparent;
+  //color: transparent;
   //transition: all 0.2s ease-in;
-  &:hover{
-      transition: all 0.45s ease;
+  //&:hover{
+   //   transition: all 0.45s ease;
     //text-shadow: 0px 1px 2px black;
-      background-image: url("https://66.media.tumblr.com/ee43027ddd192ecc8722523bcdb1d429/8ff03a4407ca0e23-99/s500x750/32e5c2c47099e0acec43cee05e41473287e3ce1f.gifv");
-      background-color: rgba(201, 76, 76, 0.3);
-  background-size: cover;
-  -webkit-background-clip: text;
-    text-shadow: 0px 1px 10px (rgba(201, 76, 76, 0.3));
-    }
+   //   background-image: url("https://66.media.tumblr.com/ee43027ddd192ecc8722523bcdb1d429/8ff03a4407ca0e23-99/s500x750/32e5c2c47099e0acec43cee05e41473287e3ce1f.gifv");
+   //   background-color: rgba(201, 76, 76, 0.3);
+  //background-size: cover;
+  //-webkit-background-clip: text;
+   // text-shadow: 0px 1px 10px (rgba(201, 76, 76, 0.3));
+   // }
 
     &:hover ~ .navdec{
       //filter: drop-shadow(2px 2px 5px white);
