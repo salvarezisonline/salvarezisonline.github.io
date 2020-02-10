@@ -18,7 +18,7 @@ a{
 
 
 .nav {
-   width: 100vh; 
+   //width: 100vh; 
   display: -webkit-box;  /* OLD - iOS 6-, Safari 3.1-6, BB7 */
   display: -ms-flexbox;  /* TWEENER - IE 10 */
   display: -webkit-flex; /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
@@ -33,7 +33,7 @@ a{
   align-items: center;
 }
 
-.about{
+.bio{
   background-color: white;
  filter: drop-shadow(0px 1px 2px rgba(201, 76, 76, 0.3));
   margin: auto;
@@ -52,7 +52,7 @@ a{
   width: 50px;
   height: 50px;
   //padding: 10px;
-  margin: 20px;
+  margin: 40px;
   &:hover{
     filter: drop-shadow(2px 2px 5px red);
   }
@@ -61,10 +61,10 @@ a{
 
 
 .navlinkleft{
-  font-size: 2rem;
+  font-size: 1.9rem;
   font-family: 'Forum', cursive;
   color: rgba(201, 76, 76, 0.3);
-  margin: 0px auto;
+  margin: 25px;
   //padding: 20px;
    &:hover{
      color: transparent;
@@ -81,7 +81,7 @@ a{
   font-size: 2rem;
   font-family: 'Forum', cursive;
   color: rgba(201, 76, 76, 0.3);
-  //margin: 0 auto;
+  margin: 0 auto;
   //padding: 20px;
    &:hover{
      color: transparent;
@@ -97,11 +97,14 @@ a{
 .shadowmove {
   //padding: 25px;
   //width: 200px;
-  //text-align: center;
-   //margin: 0 auto;
-  background-image: url("https://66.media.tumblr.com/ee43027ddd192ecc8722523bcdb1d429/8ff03a4407ca0e23-99/s500x750/32e5c2c47099e0acec43cee05e41473287e3ce1f.gifv");
-  background-size: cover;
-  -webkit-background-clip: text;
+  font-size: 3rem;
+  font-family: 'Forum', cursive;
+  color: black;
+  text-align: center;
+   margin: auto;
+  //background-image: url("https://66.media.tumblr.com/ee43027ddd192ecc8722523bcdb1d429/8ff03a4407ca0e23-99/s500x750/32e5c2c47099e0acec43cee05e41473287e3ce1f.gifv");
+  //background-size: cover;
+  //-webkit-background-clip: text;
   //padding: 20px;
   //grid-row: 1;
   //grid-column: 2 / 3;
@@ -109,35 +112,12 @@ a{
   --y-shadow: 0;
   --x:50%;
   --y:50%;
-  font-size: 3rem;
-  font-family: 'Forum', cursive;
-  color: black;
   
   //position: fixed;
   //padding: 2rem;
   transition: all 0.2s ease;
    &:hover{
-      //filter: drop-shadow(2px 2px 5px white);
-	   transition: all 0.3s ease;
      text-shadow: 0px 1px 10px (rgba(201, 76, 76, 0.3));
-    }
-	//p{
-  //position: relative;
-  
-  //top: -3px;
-  //color: transparent;
-  //transition: all 0.2s ease-in;
-  //&:hover{
-   //   transition: all 0.45s ease;
-    //text-shadow: 0px 1px 2px black;
-   //   background-image: url("https://66.media.tumblr.com/ee43027ddd192ecc8722523bcdb1d429/8ff03a4407ca0e23-99/s500x750/32e5c2c47099e0acec43cee05e41473287e3ce1f.gifv");
-   //   background-color: rgba(201, 76, 76, 0.3);
-  //background-size: cover;
-  //-webkit-background-clip: text;
-   // text-shadow: 0px 1px 10px (rgba(201, 76, 76, 0.3));
-   // }
-
-    &:hover ~ .navdec{
       //filter: drop-shadow(2px 2px 5px white);
     }
 }
@@ -151,5 +131,54 @@ body {
 	height: 100vh;
 	background-image: $black-gradient;
   
+}
+
+.gallery {
+	display: flex;
+	flex-wrap: wrap;
+	/* Compensate for excess margin on outer gallery flex items */
+	margin: -1rem -1rem;
+}
+
+.gallery-item {
+	/* Minimum width of 24rem and grow to fit available space */
+	flex: 1 0 24rem;
+	/* Margin value should be half of grid-gap value as margins on flex items don't collapse */
+	margin: 1rem;
+	box-shadow: 0.3rem 0.4rem 0.4rem rgba(0, 0, 0, 0.4);
+	overflow: hidden;
+}
+
+.gallery-image {
+	display: block;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	transition: transform 400ms ease-out;
+}
+
+.gallery-image:hover {
+	transform: scale(1.15);
+}
+
+/*
+
+The following rule will only run if your browser supports CSS grid.
+
+Remove or comment-out the code block below to see how the browser will fall-back to flexbox styling. 
+
+*/
+
+@supports (display: grid) {
+	.gallery {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(24rem, 1fr));
+		grid-gap: 2rem;
+	}
+
+	.gallery,
+	.gallery-item {
+		margin: 0;
+	}
 }
 
