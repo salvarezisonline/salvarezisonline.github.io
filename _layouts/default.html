@@ -1,49 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  
-  <!--  Meta  -->
-  <meta charset="UTF-8" />
-  <title>My New Pen!</title>
-  
-  <!--  Styles  -->
-  <link rel="stylesheet" href="css/styles.scss">
-</head>
-<body>
- <!--<div id="gradient"></div> -->
 
-<section class="nav">
-   <div class="navdec">
-  </div>
-  <div class="navlinkleft">
-    <a href="sketches.html" class="navlinkleft">sketches</a>
-  </div>
+<html>
   
-  <div class="navlinkleft">
-    <a href="projects.html" class="navlinkleft">projects</a>
-  </div>
-  <div class="navdec">
-  </div>
-<div class="shadowmove">
-  <a href='index.html'><p>s alvarez</p></a>
-  s alvarez
-</div>
-  <div class="navdec">
-  </div>
-  <div class="navlinkright">
-    <a href="bio.html" class="navlinkright">bio</a>
-  </div>
+  <head>
+    <meta charset="UTF-8" />
+    <title>s alvarez</title>
+    <link rel="stylesheet" href="assets/css/styles.scss">
+  </head>
   
-  <div class="navlinkright">
-    <a href="contact.html" class="navlinkright">contact</a>
-  </div>
-  <div class="navdec">
-  </div>
-  </section>
- 
-  {{ content }}
+  <body>
+    {% include navigation.html %}
+    {{ content }}
+  </body>
   
-  <!-- Scripts -->
-  <script src="scripts/index.js"></script>
-</body>
 </html>
