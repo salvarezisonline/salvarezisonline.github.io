@@ -81,7 +81,7 @@ a{
   font-size: 2rem;
   font-family: 'Forum', cursive;
   color: rgba(201, 76, 76, 0.3);
-  margin: 0 auto;
+  //margin: 0 auto;
   //padding: 20px;
    &:hover{
      color: transparent;
@@ -98,7 +98,7 @@ a{
   //padding: 25px;
   //width: 200px;
   //text-align: center;
-   margin: 0 auto;
+   //margin: 0 auto;
   background-image: url("https://66.media.tumblr.com/ee43027ddd192ecc8722523bcdb1d429/8ff03a4407ca0e23-99/s500x750/32e5c2c47099e0acec43cee05e41473287e3ce1f.gifv");
   background-size: cover;
   -webkit-background-clip: text;
@@ -121,9 +121,9 @@ a{
     }
 }
 p{
-  position: fixed;
+  position: relative;
   
-  top: -3px;
+  //top: -3px;
   color: transparent;
   //transition: all 0.2s ease-in;
   &:hover{
