@@ -4,9 +4,9 @@
  */
 //CEB7C1 darker pink
 
-
-@import url('https://fonts.googleapis.com/css?family=Forum&display=swap');
-
+@import url("https://use.typekit.net/hvc6pyg.css");
+@import url('https://fontlibrary.org/face/bluu');
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
 
 $black-gradient: linear-gradient(#DCD2D9, #FFFDF8, #FFFFFF);
 
@@ -19,6 +19,7 @@ a{
 
 .nav {
    //width: 100vh; 
+  //position: fixed;
   display: -webkit-box;  /* OLD - iOS 6-, Safari 3.1-6, BB7 */
   display: -ms-flexbox;  /* TWEENER - IE 10 */
   display: -webkit-flex; /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
@@ -33,38 +34,64 @@ a{
   align-items: center;
 }
 
-.about{
+.bio{
   background-color: white;
- filter: drop-shadow(0px 1px 2px rgba(201, 76, 76, 0.3));
+ filter: drop-shadow(0rem .1rem .2rem rgba(201, 76, 76, 0.3));
   margin: auto;
   //border: 5px solid gray;
   width: 50%;
-  padding: 25px;
-  column-count: 2;
-  column-gap: 5px;
-  //text-align: left;
+  grid-auto-rows: 31.25em;
+  //padding: 50px;
+  display: grid;
+  grid-template-columns: auto 40rem;
+  grid-gap: 1em;
 }
 
+.biopic{
+  margin: auto;
+  left: 3em;
+  position: relative;
+}
+
+.biotype {
+  text-align: center;
+  font-family: synthese, sans-serif;
+  font-size: .8em;
+  margin: auto;
+  padding: 3.2em;
+  right: 2.5em;
+  position: relative;
+}
+
+.biohead{
+  //text-align: justify;
+  font-family: 'BluuNextBold';
+  //margin: auto;
+  font-size:1.5em;
+  //padding: 3em;
+  //right: 2em;
+  //position: relative;
+}
 
 .navdec {
   background-image: url("https://66.media.tumblr.com/5655b74fe8bf6882a172bef5cf94ad66/d3d4d129f45ed601-ca/s640x960/af9c726cf16decb0e5b49a79c6fa6c80ca7fc3b4.gifv");
   background-size: cover;
-  width: 50px;
-  height: 50px;
+  width: 2.5rem;
+  height: 2.5rem;
   //padding: 10px;
-  margin: 40px;
+  margin: 3rem;
   &:hover{
-    filter: drop-shadow(2px 2px 5px red);
+    filter: drop-shadow(.2rem .2rem .5rem red);
   }
   
 }
 
 
 .navlinkleft{
-  font-size: 2rem;
-  font-family: 'Forum', cursive;
+  font-size: 1.5rem;
+  font-family: 'BluuNextBold';
   color: rgba(201, 76, 76, 0.3);
-  margin: 25px;
+  margin: 0 auto;
   //padding: 20px;
    &:hover{
      color: transparent;
@@ -78,8 +105,8 @@ a{
 }
 
 .navlinkright{
-  font-size: 2rem;
-  font-family: 'Forum', cursive;
+  font-size: 1.5rem;
+  font-family: 'BluuNextBold';
   color: rgba(201, 76, 76, 0.3);
   margin: 0 auto;
   //padding: 20px;
@@ -97,8 +124,8 @@ a{
 .shadowmove {
   //padding: 25px;
   //width: 200px;
-  font-size: 3rem;
-  font-family: 'Forum', cursive;
+  font-size: 2rem;
+  font-family: 'BluuNextBold';
   color: black;
   text-align: center;
    margin: auto;
@@ -126,59 +153,79 @@ a{
 
 
 
-
 body {
 	height: 100vh;
 	background-image: $black-gradient;
   
 }
 
-.gallery {
-	display: flex;
-	flex-wrap: wrap;
-	/* Compensate for excess margin on outer gallery flex items */
-	margin: -1rem -1rem;
+#gallery{
+  -webkit-column-count:4;
+  -moz-column-count:4;
+  column-count:4;
+  
+  -webkit-column-gap:20px;
+  -moz-column-gap:20px;
+  column-gap:20px;
 }
-
-.gallery-item {
-	/* Minimum width of 24rem and grow to fit available space */
-	flex: 1 0 24rem;
-	/* Margin value should be half of grid-gap value as margins on flex items don't collapse */
-	margin: 1rem;
-	box-shadow: 0.3rem 0.4rem 0.4rem rgba(0, 0, 0, 0.4);
-	overflow: hidden;
+@media (max-width:1200px){
+  #gallery{
+  -webkit-column-count:3;
+  -moz-column-count:3;
+  column-count:3;
+    
+  -webkit-column-gap:20px;
+  -moz-column-gap:20px;
+  column-gap:20px;
 }
-
-.gallery-image {
-	display: block;
-	width: 100%;
-	height: 100%;
-	object-fit: cover;
-	transition: transform 400ms ease-out;
 }
-
-.gallery-image:hover {
-	transform: scale(1.15);
+@media (max-width:800px){
+  #gallery{
+  -webkit-column-count:2;
+  -moz-column-count:2;
+  column-count:2;
+    
+  -webkit-column-gap:20px;
+  -moz-column-gap:20px;
+  column-gap:20px;
 }
-
-/*
-
-The following rule will only run if your browser supports CSS grid.
-
-Remove or comment-out the code block below to see how the browser will fall-back to flexbox styling. 
-
-*/
-
-@supports (display: grid) {
-	.gallery {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(24rem, 1fr));
-		grid-gap: 2rem;
-	}
-
-	.gallery,
-	.gallery-item {
-		margin: 0;
-	}
 }
-
+@media (max-width:600px){
+  #gallery{
+  -webkit-column-count:1;
+  -moz-column-count:1;
+  column-count:1;
+}  
+}
+.card{
+  width:60%;
+  height:60%;
+  margin: 4% auto;
+  box-shadow: 0rem .2rem .4rem rgba(201, 76, 76, 0.3);
+  cursor: pointer;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+.modal-img,.model-vid{
+  width:100%;
+  height:100%;
+}
+.modal-body{
+  padding:0rem;  
+}
+.modal-content{
+  grid-auto-rows: auto;
+  //padding: 50px;
+  display: grid;
+  grid-template-columns: auto 30rem;
+  grid-gap: 1em;  
+}
+.modal-text{
+  text-align: left;
+  font-family: synthese, sans-serif;
+  font-size: .8em;
+  margin: auto;
+  padding: 3.2em;
+  //right: 2.5em;
+  position: relative;  
+}
